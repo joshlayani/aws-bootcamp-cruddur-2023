@@ -22,14 +22,16 @@ Next, I added a budget notification to be sent to my email when my costs reach 8
 ### Creating an Alarm
 Similarly to above, the alarm was created using the AWS CLI in gitpod. The json can be found in `aws/json/billing-alarm.json`. The format for the json can be found on [this page](https://docs.aws.amazon.com/cli/latest/reference/cloudwatch/put-metric-alarm.html). Again we can verify that it was properly added using the console.
 
-![Budget Page](./images/week0_alarm.png)
+![Alarms Page](./images/week0_alarm.png)
 
 ## Architecture
 
 ### Conceptual Diagram
 Using LucidChart I created the following conceptual diagram:
 
-![Budget Page](./images/week0_conceptual-diagram.png)
+![Conceptual Diagram](./images/week0_conceptual-diagram.png)
 
 ### Logical Diagram
 Again using LucidChart, the following logical diagram was created.
+
+![Logical Diagram](./images/week0_logical-diagram.png)
