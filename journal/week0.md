@@ -5,7 +5,7 @@
 ### Setting Up Billing Alerts
 Followed the video posted on the playlist and adjusted my billing preferences.
 
-![Alt Text](https://pasteboard.co/YJ443BgenNwK.png)
+![Alt Text](https://gcdnb.pbrd.co/images/YJ443BgenNwK.png?o=1)
 
 ## Architecture
 
