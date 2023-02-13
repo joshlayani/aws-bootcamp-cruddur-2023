@@ -2,6 +2,11 @@
 
 ## Billing
 
+### Setting Up Billing Alerts
+Followed the video posted on the playlist and adjusted my billing preferences.
+
+![Billing Alerts](https://pasteboard.co/YJ443BgenNwK.png)
+
 ## Architecture
 
 ### Conceptual Diagram
@@ -21,8 +26,6 @@ This is a block of code
 ```javascript
 let num = Math.random();
 ```
-
-![alt text](http://picsum.photos/200/200)
 
 Some paragraph with text
 > blockquote text below paragraph
