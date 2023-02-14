@@ -27,11 +27,12 @@ Similarly to above, the alarm was created using the AWS CLI in gitpod. The json 
 ## Architecture
 
 ### Conceptual Diagram
-Using LucidChart I created the following conceptual diagram:
+I created the following conceptual diagram on a napkin. I also created it on LucidChart but had to delete it because I had exceeded the number of shapes in a single document while making my logical diagram.
 
+![Napkin Diagram](./images/week0_napkin-diagram.png)
 ![Conceptual Diagram](./images/week0_conceptual-diagram.png)
 
 ### Logical Diagram
-Again using LucidChart, the following logical diagram was created.
+Using LucidChart, the following logical diagram was created.
 
 ![Logical Diagram](./images/week0_logical-diagram.png)
