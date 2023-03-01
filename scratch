@@ -1,4 +1,0 @@
-export HONEYCOMB_API_KEY="r17cdVI9b6vVjChaBQKhoA"
-gp env HONEYCOMB_API_KEY="r17cdVI9b6vVjChaBQKhoA"
-
-export OTEL_SERVICE_NAME: 'backend-flask'
