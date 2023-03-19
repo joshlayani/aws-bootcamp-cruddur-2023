@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime, timedelta, timezone
-from lib.db import DB
+from lib.db import db
 
 class CreateActivity:
   def run(message, user_handle, ttl):
@@ -50,8 +50,8 @@ class CreateActivity:
     return model
 
   def create_activity(handle, message, expires_at):
-    sql = DB().template('activities', 'create')
-    uuid = DB().query_commit(
+    sql = db.template('activities', 'create')
+    uuid = db.query_commit(
       sql, 
       {'handle': handle, 
       'message': message, 
@@ -59,7 +59,8 @@ class CreateActivity:
     return uuid
   
   def query_object_activity(uuid):
-    sql = DB().template('activities', 'object')
-    return DB().query_object_json(sql)(
+    sql = db.template('activities', 'object')
+    return db.query_object_json(
       sql, 
-      {'uuid': uuid})
+      {'uuid': uuid}
+      )

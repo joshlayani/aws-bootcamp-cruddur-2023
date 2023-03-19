@@ -67,6 +67,7 @@ class DB:
         with conn.cursor() as cur:
           cur.execute(wrapped_sql, params)
           json = cur.fetchone()
+    return json[0]
 
   def template(self, *args):
     pathing = list((app.root_path,'db','sql') + args)
@@ -87,3 +88,5 @@ class DB:
     no_color = '\033[0m'
     print(f'{cyan}SQL ---- {title}{no_color}')
     print(sql + '\n')
+
+db = DB()
