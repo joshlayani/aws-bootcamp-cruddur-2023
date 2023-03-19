@@ -8,11 +8,10 @@ printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 schema_path=$(realpath .)/db/schema.sql
 echo $schema_path
 
-if [$1="prod"]; then
-  echo "This is the prod environment"
+if [ "$1" = "prod" ]; then
+  echo "Running in production mode"
   URL=$PROD_CONNECTION_URL
 else
-  echo "This is not prod"
   URL=$CONNECTION_URL
 fi
 
