@@ -37,7 +37,7 @@ ports:
 
 &nbsp;
 
-# Python package requirements
+# Requirements
 ## Update `backend-flask/requirements.txt`:
 Lets add the following python packages to `backend-flask/requirements.txt`. This adds the required packages to our project.
 
@@ -56,7 +56,7 @@ watchtower
 
 # Docker
 
-## Update `docker-compose.yml`
+## Update `docker-compose.yml`:
 Add the following environment variables to the `docker-compose.yml` file:
 
 ```yml
