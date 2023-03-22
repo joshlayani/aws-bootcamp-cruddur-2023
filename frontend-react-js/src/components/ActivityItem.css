@@ -1,7 +1,7 @@
 .activity_item {
   display: flex;
   flex-direction: column;
-  border-bottom: solid 1px rgb(60,54,79);
+  border-bottom: solid 2px var(--primary-color);
   overflow: hidden;
   padding: 16px;
 }
@@ -27,14 +27,14 @@
 }
 
 .activity_item .activity_actions .action .counter{
-  color: rgba(255,255,255,0.8);
+  color: var(--text-color-dark);
   font-weight: 800;
 }
 
 .activity_item .activity_actions .icon{
   height: 18px;
   width: 18px;
-  fill: #fff;
+  fill: var(--text-color-dark);
 }
 
 .activity_item .activity_actions .action:hover {
@@ -42,5 +42,5 @@
 }
 
 .activity_item .activity_actions .action:hover .icon {
-  fill: rgb(149,0,255);
+  fill: var(--accent-color)
 }

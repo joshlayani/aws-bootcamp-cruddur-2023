@@ -17,7 +17,7 @@
 }
 
 .activity_feed_heading .title{
-  color: #fff;
+  color: var(--text-color-dark);
   font-weight: 800;
   font-size: 20px;
 }
