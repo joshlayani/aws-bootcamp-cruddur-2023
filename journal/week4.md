@@ -152,3 +152,23 @@ aws ec2 modify-security-group-rules \
 
 # SQL
 
+Finally we can add a few SQL files for common queries. We have one for updating the schema for our database, one for adding seed data, one to create an activity, one to retrieve the list of activities to render on the home page. 
+
+## Create `home.sql`:
+
+```sql
+SELECT
+  activities.uuid,
+  users.display_name,
+  users.handle,
+  activities.message,
+  activities.replies_count,
+  activities.reposts_count,
+  activities.likes_count,
+  activities.reply_to_activity_uuid,
+  activities.expires_at,
+  activities.created_at
+FROM public.activities
+LEFT JOIN public.users ON users.uuid = activities.user_uuid
+ORDER BY activities.created_at DESC
+```
