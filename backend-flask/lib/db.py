@@ -83,10 +83,19 @@ class DB:
       template_content = f.read()
     return template_content
 
-  def print_sql(self, title, sql):
+  def query_value(self,sql,params={}):
+    self.print_sql('value',sql,params)
+
+    with self.pool.connection() as conn:
+      with conn.cursor() as cur:
+        cur.execute(sql,params)
+        json = cur.fetchone()
+        return json[0]
+
+  def print_sql(self, title, sql, params={}):
     cyan = '\033[96m'
     no_color = '\033[0m'
     print(f'{cyan}SQL ---- {title}{no_color}')
-    print(sql + '\n')
+    print(sql, params)
 
 db = DB()
