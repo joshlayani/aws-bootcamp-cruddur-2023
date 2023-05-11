@@ -12,7 +12,7 @@ class DB:
 
   def query_commit(self, sql, params={}): #commits data (i.e. insert)
 
-    self.print_sql('commit w return', sql)
+    self.print_sql('commit w return', sql, params)
 
     pattern = r"\bRETURNING\b"
     is_returning_id = re.search(pattern, sql)
