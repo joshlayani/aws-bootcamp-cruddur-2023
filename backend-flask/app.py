@@ -14,7 +14,7 @@ from services.create_message import *
 from services.show_activity import *
 from services.users_short import *
 
-from lib.cognito_jwt_token import CognitoJwtToken, FlaskAWSCognitoError, TokenVerifyError
+from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
 
 # HoneyComb ---------
 from opentelemetry import trace
@@ -109,8 +109,7 @@ def data_message_groups():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenicatied request
-    app.logger.debug("authenicated")
+    app.logger.debug("authenticated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
     model = MessageGroups.run(cognito_user_id=cognito_user_id)
@@ -119,7 +118,6 @@ def data_message_groups():
     else:
       return model['data'], 200
   except TokenVerifyError as e:
-    # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
 
@@ -155,7 +153,7 @@ def data_create_message():
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
-    # authenticated request
+    # authenicatied request
     app.logger.debug("authenicated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
@@ -180,7 +178,6 @@ def data_create_message():
     else:
       return model['data'], 200
   except TokenVerifyError as e:
-    # unauthenicatied request
     app.logger.debug(e)
     return {}, 401
 
@@ -241,7 +238,7 @@ def data_show_activity(activity_uuid):
 @app.route("/api/activities/<string:activity_uuid>/reply", methods=['POST','OPTIONS'])
 @cross_origin()
 def data_activities_reply(activity_uuid):
-  user_handle  = 'andrewbrown'
+  user_handle  = request.json["user_handle"]
   message = request.json['message']
   model = CreateReply.run(message, user_handle, activity_uuid)
   if model['errors'] is not None:
