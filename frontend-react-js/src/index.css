@@ -1,54 +1,17 @@
 :root {
+  --bg: rgb(61,13,123);
+  --fg: rgb(8,1,14);
 
-  /* Colors */
-  --primary-color: #4B7BEC;
-  --secondary-color: #FDB813;
-  --accent-color: #EA526F;
-  --background-color: #FFFFFF;
-  --foreground-color: #333333;
-  --text-color-dark: #333333;
-  --text-color-light: #f3f3f3;
-  --border-color: #E0E0E0;
-
-  /* Typography */
-  --primary-font: 'Roboto', sans-serif;
-  --secondary-font: 'Montserrat', sans-serif;
-
-  /* Font sizes */
-  --font-size-body: 16px;
-  --font-size-h1: 32px;
-  --font-size-h2: 28px;
-  --font-size-h3: 24px;
-  --font-size-h4: 20px;
-  --font-size-h5: 18px;
-  --font-size-h6: 16px;
-  --font-size-button: 16px;
-  --font-size-caption: 12px;
-
-  /* Spacing scale */
-  --spacing-xs: 4px;
-  --spacing-s: 8px;
-  --spacing-m: 16px;
-  --spacing-l: 24px;
-  --spacing-xl: 32px;
-  --spacing-xxl: 48px;
-
-  /* old vars */
-
-  --bg-color: rgb(61,13,123);
-  --fg-color: rgb(8,1,14);
-
-  --field-border: rgba(255,255,255,0.3);
+  --field-border: rgb(255,255,255,0.29);
+  --field-border-focus: rgb(149,0,255,1);
   --field-bg: rgb(31,31,31);
-  --field-border-focus: rgb(149,0,255);
-
 }
 
 * { box-sizing: border-box; }
 html,body { 
   height: 100%; 
   width: 100%; 
-  background: var(--primary-color)
+  background: var(--bg);
 }
 
 body {
