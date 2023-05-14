@@ -103,6 +103,10 @@ cors = CORS(
 #    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
 #    return response
 
+@app.route('/api/health-check')
+def health_check():
+  return {'success': True}, 200
+
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
@@ -128,7 +132,7 @@ def data_messages(message_group_uuid):
   try:
     claims = cognito_jwt_token.verify(access_token)
     # authenicatied request
-    app.logger.debug("authenicated")
+    app.logger.debug("authenticated")
     app.logger.debug(claims)
     cognito_user_id = claims['sub']
     model = Messages.run(
